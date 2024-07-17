@@ -1,0 +1,17 @@
+.animateWidth{
+    animation-name: animateWidth;
+    animation-delay: 300ms;
+}
+.animateWidth.pause{
+    animation-play-state: paused;
+}
+
+@keyframes animateWidth{
+    from{
+        width: 100%;
+    }
+    to{
+        width: 0;
+    }
+}
+

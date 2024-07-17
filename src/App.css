@@ -1,0 +1,135 @@
+.mask-img {
+  mask: linear-gradient(to left, black 65%, transparent 85%);
+  -webkit-mask: linear-gradient(to left, black 65%, transparent 85%);
+}
+.mask-img2 {
+  /* -webkit-mask-image: radial-gradient(ellipse 100% 120% at 50% 50%, black 10%, transparent 50%); */
+  mask: radial-gradient(ellipse 65% 70% at 50% 50%, black 50%, transparent 70%);
+}
+.mask-img3 {
+  mask: linear-gradient(to bottom, black 65%, transparent 95%);
+  -webkit-mask: linear-gradient(to bottom, black 65%, transparent 95%);
+}
+.mask4 {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 4%,
+    black 96%,
+    transparent
+  );
+  -webkit-mask: linear-gradient(
+    to right,
+    transparent,
+    black 4%,
+    black 96%,
+    transparent
+  );
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+#root {
+  @apply min-h-[100dvh] flex flex-col;
+  background-color: #dddddd2b;
+}
+
+input {
+  @apply font-josephsophia font-thin rounded-lg leading-none py-2 outline-none border w-full px-3  bg-transparent border-dashed border-slate-400;
+}
+
+.s2 {
+  background: url("/300.webp") repeat;
+  background-size: contain;
+  background-color: white;
+}
+.s3 {
+  background: url("/300.webp") repeat;
+  background-size: cover;
+  background-color: white;
+}
+
+.small-screen {
+  font-size: max(1.4rem, 3vw);
+  @apply leading-tight;
+}
+
+.large-screen {
+  font-size: max(1.4rem, 1vw);
+}
+
+.xlarge-screen {
+  font-size: max(1.8rem, 2vw);
+}
+
+.small-screen .heading {
+  font-size: max(1.9rem, 2.5vw);
+}
+.large-screen .heading {
+  font-size: max(2rem, 3vw);
+}
+
+.xlarge-screen .heading {
+  font-size: min(3rem, 2.3vw);
+}
+
+.small-screen .name {
+  font-size: max(1.9rem, 2vw);
+}
+
+.large-screen .name {
+  font-size: max(1.8rem, 2.5vw);
+}
+
+.xlarge-screen .name {
+  font-size: max(1.8rem, 2.5vw);
+}
+
+.logo {
+  font-size: max(1.6rem, 2vw);
+  @apply px-2 leading-none;
+}
+
+.icon {
+  font-size: max(1.1rem, 1.5vw);
+  @apply left-full -translate-x-1/2 translate-y-2/3 bottom-full;
+}
+.xlarge-screen .icon {
+  font-size: max(1.1rem, min(2.5vw, 15px));
+  @apply translate-y-full;
+}
+
+.overlayIsOpen {
+  @apply overflow-hidden max-h-[100dvh] max-w-[100dvw];
+}
+
+#overlay {
+  font-size: max(1.4rem, 1vw);
+  word-spacing: 6px;
+}

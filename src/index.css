@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'bungasai';
+    src: url('/fonts/bungasai/bungasai-webfont.woff2') format('woff2'),
+         url('/fonts/bungasai/bungasai-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'kurnia';
+    src: url('/fonts/kurnia/kurnia-webfont.woff2') format('woff2'),
+         url('/fonts/kurnia/kurnia-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'josephsophia';
+    src: url('/fonts/josephsophia/josephsophia-webfont.woff2') format('woff2'),
+         url('/fonts/josephsophia/josephsophia-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bonushearts';
+    src: url('/fonts/bonushearts/bonushearts-webfont.woff2') format('woff2'),
+         url('/fonts/bonushearts/bonushearts-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'facelio';
+    src: url('/fonts/facelio/facelio-webfont.woff2') format('woff2'),
+         url('/fonts/facelio/facelio-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'roboto';
+    src: url('/fonts/roboto/roboto-webfont.woff2') format('woff2'),
+         url('/fonts/roboto/roboto-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'lovely';
+    src: url('/fonts/lovely_5/lovely_font_demo-webfont.woff2') format('woff2'),
+         url('/fonts/lovely_5/lovely_font_demo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
