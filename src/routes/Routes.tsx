@@ -1,19 +1,37 @@
-import { ReactNode, Suspense, lazy } from "react";
+import { ReactNode, Suspense, lazy, useEffect, useRef, useState } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { Test } from "../pages/Test.tsx";
+import ProgressBar from "../Components/ProgressBar.tsx";
 const Post = lazy(() => import("../pages/Post.tsx"));
 const Consultation = lazy(() => import("../pages/Consultation.tsx"));
-const Auth = lazy(() => import("../pages/Auth.tsx")); 
+const Auth = lazy(() => import("../pages/Auth.tsx"));
 
-const Loader = () => {
-  return (
-    <div className="grid place-items-center w-full h-full fixed top-0 left-0 bg-white/80">
-      <div className="w-fit p-3 min-w-[300px] border shadow-sm  text-xl font-robotolight font-bold capitalize grid place-items-center rounded-xl">
-        component loading ...
+export const Loader = () => {
+  const timer = useRef<null | ReturnType<typeof setTimeout>>(null);
+  const [showLoader, setShowLoader] = useState(false);
+  useEffect(() => {
+    // Start the timer
+    timer.current = setTimeout(() => {
+      setShowLoader(true);
+    }, 100);
+
+    // Clear the timer on component unmount
+    return () => {
+      if (timer.current) {
+        clearTimeout(timer.current);
+      }
+    };
+  }, []);
+  if (showLoader)
+    return (
+      <div className="grid place-items-center w-full h-full fixed top-0 left-0 bg-white/80">
+        <div className="w-fit p-3 min-w-[300px] border shadow-sm  text-xl font-robotolight font-bold capitalize grid place-items-center rounded-xl">
+          <ProgressBar value={20} />
+        </div>
       </div>
-    </div>
-  );
+    );
+  return "";
 };
 
 const wrappWithSuspense = (component: ReactNode) => {

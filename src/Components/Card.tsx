@@ -13,17 +13,19 @@ const Card: FC<Post> = ({ message, author }) => {
 
   return (
     <div
-      className={`flex flex-col min-w-full border relative isolate gap-y-4 leading-tight s3 shadow ${
-        screenSize < ScreenSize.MEDIUM ? "aspect-square" : "aspect-video"
-      } overflow-hidden p-4 font-lovely  text-gray-800 font-bold `}
+      className={`flex flex-col  border relative isolate gap-y-4 leading-tight s3 h-full w-full ${
+        screenSize < ScreenSize.MEDIUM ? " " : " "
+      } overflow-hidden p-4 font-josephsophia`}
     >
-      <div className="w-full h-full font-josephsophia overflow-hidden font-thin flex-shrink">
+      <div className="w-full h-full overflow-auto flex-shrink">
         <TextOverflow>
           <div className="font-josephsophia">{message}</div>
         </TextOverflow>
+        
       </div>
       <div className="text-end mt-auto leading-none">{author}</div>
       <img
+        draggable={false}
         className="absolute max-w-[60px] -z-10 opacity-40 -top-5 right-0 -rotate-[35deg] translate-x-3 origin-center object-contain"
         src={screen}
         alt=""

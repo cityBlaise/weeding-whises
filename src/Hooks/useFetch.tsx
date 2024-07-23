@@ -8,6 +8,8 @@ const useFetch = <T,>(url: string, options?: RequestInit): [T | null, string | n
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
+    setError(null)
+    setLoading(!false);
     const fetchData = async () => {
       try {
         const response = await fetch(url, options);

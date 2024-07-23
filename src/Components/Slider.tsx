@@ -2,6 +2,8 @@ import { motion, useMotionValue } from "framer-motion";
 import { FC } from "react";
 import Card from "./Card";
 import Post from "../utils/types/Post";
+import { useAppSettings } from "../Context/AppSettings/AppSettings.store";
+import { ScreenSize } from "../Context/AppSettings/AppSettings";
 
 interface Slider {
   data: Post[];
@@ -10,6 +12,8 @@ interface Slider {
   setActiveIndex: (index: number) => void;
 }
 const Slider: FC<Slider> = ({ activeIndex, setActiveIndex, slides, data }) => {
+  const screenSize = useAppSettings((state) => state.screenSize);
+
   const dragX = useMotionValue(0);
   const SPRING_OPTIONS = {
     type: "spring",
@@ -27,7 +31,7 @@ const Slider: FC<Slider> = ({ activeIndex, setActiveIndex, slides, data }) => {
     setActiveIndex(next!);
   };
   return (
-    <div className="w-full overflow-x-hidden h-fit mask4">
+    <div className={`w-full max-w-full overflow-hidden h-fit py-6 mask4`}>
       <motion.div
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
@@ -35,23 +39,54 @@ const Slider: FC<Slider> = ({ activeIndex, setActiveIndex, slides, data }) => {
         transition={SPRING_OPTIONS}
         style={{
           x: dragX,
-          gridTemplateColumns: `repeat(${slides},100%)`,
+          gridTemplateColumns: `repeat(${slides},96%)`,
         }}
         onDragEnd={onDragEnd}
         initial={false}
         animate={{
           translateX: `-${
-            activeIndex * 100 +
-            ( activeIndex == slides - 1 ? .5 : 0)
+            activeIndex * 96 +
+            (activeIndex == 0
+              ? 0
+              : activeIndex % 2 != 0
+              ? -3 * activeIndex
+              : -2 * activeIndex)
             // index * 100 + (index == 0 ? 0 : index == 3 ? 4 : 2)
           }%`,
         }}
-        className="h-fit cursor-grab grid grid-flow-col w-full gap-x-2 pr-1 active:cursor-grabbing "
+        className={`h-full max-h-full cursor-grab grid grid-flow-col w-full pr-1 active:cursor-grabbing
+          ${screenSize == ScreenSize.XLARGE && "max-w-3xl"}
+          ${screenSize == ScreenSize.MEDIUM && "max-w-2xl"}
+          ${screenSize <= ScreenSize.SMALL && "max-w-[90%]"} 
+          `}
       >
         {Array(slides)
           .fill(0)
           .map((_, i) => (
-            <Card key={i} {...data[i]} />
+            <div
+              key={i}
+              className={`${i % 2 == 0 ? "rotate-3" : "-rotate-3"} ${
+                i == activeIndex
+                  ? "z-[1] shadow"
+                  : "z-0 opacity-80 translate-y-10"
+              }
+                w-full ${
+                  screenSize < ScreenSize.MEDIUM && "max-h-[550px] h-[75vh]"
+                }
+                ${screenSize == ScreenSize.SMALL && "max-h-[450px] h-[80vh]"}
+                ${
+                  screenSize >= ScreenSize.MEDIUM &&
+                  "h-[340px]"
+                } 
+                ${
+                  screenSize >= ScreenSize.LARGE &&
+                  "h-[400px]"
+                } 
+               max-w-full w-fit overflow-hidden
+              transition-all duration-500`}
+            >
+              <Card {...data[i]} />
+            </div>
           ))}
       </motion.div>
     </div>

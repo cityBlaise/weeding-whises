@@ -11,9 +11,9 @@ const XLargeScreen = () => {
   return (
     <div className="flex-1 xlarge-screen h-full flex flex-col">
       <Header />
-      <main className="max-w-[1500px] mx-auto h-full flex-1 flex relative  w-full">
+      <main className="max-w-[1500px] mx-auto gap-10  h-full flex-1 flex relative mt-3 px-4   w-full">
         {pathname !== "/auth" && (
-          <div className="sticky top-14 mt-14 h-fit w-[15%] px-2 grid place-items-center">
+          <div className="sticky top-14 translate-y-1/2 h-fit w-[15%] px-2 grid place-items-center">
             <img
               src={img3}
               alt=""
@@ -21,9 +21,9 @@ const XLargeScreen = () => {
             />
           </div>
         )}
-        <div className="place-items-center flex-1 w-full flex flex-col">
+        <div className=" flex-1 w-full flex flex-col  px-8">
           <div
-            className={`w-full grid place-items-center h-full ${
+            className={`w-full flex justify-center h-full ${
               pathname == "/auth" && screenSize >= ScreenSize.SMALL
                 ? "max-w-md mx-auto"
                 : ""
@@ -50,6 +50,21 @@ const XLargeScreen = () => {
             />
           </div>
         )}
+        {/* <div className="sticky top-14 mt-14 py-3 shadow-xl h-fit w-[15%] px-2 grid place-items-center rounded bg-white border">
+          <div
+            contentEditable={false}
+            className="font-bold heading leading-none w-full font-lovely text-center capitalize"
+          >
+            exprimez vos voeux
+            <br />
+            Aux époux
+          </div>
+          <img
+            src={img1}
+            alt=""
+            className="w-full object-contain mask-img2 order-first"
+          />
+        </div> */}
       </main>
       <div className="mt-auto">
         <Footer />

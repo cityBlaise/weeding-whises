@@ -5,4 +5,5 @@ export default interface Post {
   author: string;
   user: User;
   createdAt: string;
+  postId:string;
 }

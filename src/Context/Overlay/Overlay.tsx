@@ -1,16 +1,16 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useRef, useState, useTransition } from "react";
+import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useLocation } from "react-router-dom";
-import style from "./Overlay.module.css";
+// import style from "./Overlay.module.css";
 import { useOverlay } from "./Overlay.store";
 
 const Overlay = () => {
-  const { close, isOpen, child, closeOnClickOutside } = useOverlay();
+  const { close, isOpen, children } = useOverlay();
 
   const { pathname } = useLocation();
-  const [bounce, setBounce] = useState(false);
-  const [, startTransition] = useTransition();
+  // const [bounce, setBounce] = useState(false);
+  // const [, startTransition] = useTransition();
 
   const overlayRef = useRef<HTMLDivElement>(null);
 
@@ -35,17 +35,17 @@ const Overlay = () => {
 
   const handleClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
-      if (closeOnClickOutside) {
-        close();
-        return;
-      } else {
-        setBounce(true);
-        startTransition(() => {
-          setTimeout(() => {
-            setBounce(false);
-          }, 1000);
-        });
-      }
+      // if (closeOnClickOutside) {
+      //   close();
+      //   return;
+      // } else {
+      //   setBounce(true);
+      //   startTransition(() => {
+      //     setTimeout(() => {
+      //       setBounce(false);
+      //     }, 1000);
+      //   });
+      // }
     }
   };
 
@@ -66,11 +66,25 @@ const Overlay = () => {
         >
           <div
             onClick={handleClick}
-            className={`${
-              bounce ? style.bounce : ""
-            } w-full h-full overflow-auto flex flex-col`}
+            // ${bounce ? style.bounce : ""}
+            className={`
+              w-full h-full overflow-auto flex flex-col`}
           >
-            {child && child}
+            {children &&
+              children.map((x) => (
+                <motion.div
+                  key={x.id}
+                  animate="open"
+                  exit="closed"
+                  variants={{
+                    open: { opacity: 1, transition: { duration: 0.2 } },
+                    closed: { opacity: 0, transition: { duration: 0.2 } },
+                  }}
+                  className="absolute inset-0 overflow-auto border-2"
+                >
+                  {x.child}
+                </motion.div>
+              ))}
           </div>
         </motion.div>
       )}

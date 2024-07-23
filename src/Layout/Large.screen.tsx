@@ -8,9 +8,9 @@ const LargeScreen = () => {
   const { pathname } = useLocation();
   const screenSize = useAppSettings((state) => state.screenSize);
   return (
-    <div className="flex-1 large-screen">
+    <div className="flex-1 large-screen flex flex-col">
       <Header />
-      <main className="max-w-full flex relative">
+      <main className="max-w-full flex relative flex-1">
         <div className="sticky top-14 mt-14 h-fit w-1/4 px-2 grid place-items-center">
           <img
             src={img3}
