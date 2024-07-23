@@ -6,7 +6,7 @@ interface Pagination {
   onClick?: (index: number) => void;
 }
 
-const Pagination: FC<Pagination> = memo(({ pages, onClick }) => {
+const Pagination: FC<Pagination> = memo(({ pages, }) => {
   const [searchParams] = useSearchParams();
   const currentPage = searchParams.get("page") || 1;
   return (
