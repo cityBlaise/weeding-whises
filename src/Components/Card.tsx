@@ -13,7 +13,7 @@ const Card: FC<Post> = ({ message, author }) => {
 
   return (
     <div
-      className={`flex flex-col  border relative isolate gap-y-4 leading-tight s3 h-full w-full ${
+      className={`flex flex-col  border relative isolate gap-y-4 leading-tight  s3 h-full w-full ${
         screenSize < ScreenSize.MEDIUM ? " " : " "
       } overflow-hidden p-4 font-josephsophia`}
     >
@@ -38,19 +38,19 @@ const Card: FC<Post> = ({ message, author }) => {
       />
       <img
         draggable={false}
-        className="absolute max-w-[100px] -z-10 opacity-40 -bottom-5 right-0 rotate-[35deg] translate-x-3 origin-center object-contain"
+        className="absolute max-w-[40px] -z-10 opacity-40 -bottom-5 right-0 rotate-[35deg] translate-x-3 origin-center object-contain"
         src={img5}
         alt=""
       />
       <img
         draggable={false}
-        className="absolute max-w-[100px] -z-10 opacity-40 -top-0 left-0 rotate-[35deg] translate-x-3 origin-center object-contain"
+        className="absolute max-w-[40px] -z-10 opacity-40 -top-0 left-0 rotate-[35deg] translate-x-3 origin-center object-contain"
         src={img7}
         alt=""
       />
       <img
         draggable={false}
-        className="absolute max-w-[200px] -z-10 opacity-40 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rotate-[35deg] origin-center object-contain"
+        className="absolute max-w-[100px] -z-10 opacity-40 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 rotate-[35deg] origin-center object-contain"
         src={img6}
         alt=""
       />

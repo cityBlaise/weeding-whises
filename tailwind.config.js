@@ -14,6 +14,9 @@ export default {
         'facelio':['facelio',"system-ui"],
         'roboto':['roboto',"system-ui"],
         'lovely':['lovely',"system-ui"],
+      }, 
+      colors:{
+        "green-hermine":"#42b4b1"
       }
     },
   },

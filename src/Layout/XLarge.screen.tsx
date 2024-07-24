@@ -2,7 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import img1 from "/img1.png";
-import img3 from "/img3.jpg";
+import img2 from "/img2.png";
 import { useAppSettings } from "../Context/AppSettings/AppSettings.store";
 import { ScreenSize } from "../Context/AppSettings/AppSettings";
 const XLargeScreen = () => {
@@ -13,11 +13,11 @@ const XLargeScreen = () => {
       <Header />
       <main className="max-w-[1500px] mx-auto gap-10  h-full flex-1 flex relative mt-3 px-4   w-full">
         {pathname !== "/auth" && (
-          <div className="sticky top-14 translate-y-1/2 h-fit w-[15%] px-2 grid place-items-center">
+          <div className="sticky top-14  bg-white border shadow-xl rounded translate-y-1/2 h-fit w-[300px] px-2 grid place-items-center">
             <img
-              src={img3}
+              src={img2}
               alt=""
-              className="max-w-full blur-[3px] object-contain  mask-img2"
+              className="max-w-full aspect-square   object-contain "
             />
           </div>
         )}
@@ -37,7 +37,7 @@ const XLargeScreen = () => {
           <div className="sticky top-14 mt-14 py-3 shadow-xl h-fit w-[15%] px-2 grid place-items-center rounded bg-white border">
             <div
               contentEditable={false}
-              className="font-bold heading leading-none w-full font-lovely text-center capitalize"
+              className="font-bold heading text-green-hermine leading-none w-full font-lovely text-center capitalize"
             >
               exprimez vos voeux
               <br />

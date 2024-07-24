@@ -12,7 +12,7 @@ const Navigation = () => {
         <ul className="text-base flex gap-x-3 items-center">
           <li>
             <Link to="whises">
-              <div className="border text-gray-700   flex items-center gap-1 border-gray-300 bg-slate-50 p-0.5 font-lovely text-2xl font-bold px-4 rounded">
+              <div className="border text-green-hermine   flex items-center gap-1 border-gray-300 bg-slate-50 p-0.5 font-lovely text-2xl font-bold px-4 rounded">
                 <span>consulter</span>
                 <TfiGift className="" size={15} />
               </div>

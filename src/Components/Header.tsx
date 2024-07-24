@@ -25,7 +25,7 @@ const Header = () => {
       </div>
       <Link
         to={"/"}
-        className="font-josephsophia logo capitalize px-2 relative isolate"
+        className="font-josephsophia text-green-hermine logo capitalize px-2 relative isolate"
       >
         <span>whises</span>
         <TfiGift className="absolute z-0 icon" />

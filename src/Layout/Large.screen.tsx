@@ -11,11 +11,11 @@ const LargeScreen = () => {
     <div className="flex-1 large-screen flex flex-col">
       <Header />
       <main className="max-w-full flex relative flex-1">
-        <div className="sticky top-14 mt-14 h-fit w-1/4 px-2 grid place-items-center">
+        <div className="sticky top-14 mt-14   w-[200px] h-fit px-2 grid place-items-center bg-white border shadow-xl rounded translate-y-1/2 ml-8">
           <img
             src={img3}
             alt=""
-            className="max-w-full w-min blur-[2.1px] object-contain  mask-img2"
+            className="max-w-full max-h-full"
           />
         </div>
         <div className="grid place-items-center flex-1 w-full">
