@@ -2,7 +2,6 @@ import { ReactNode, Suspense, lazy, useEffect, useRef, useState } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { Test } from "../pages/Test.tsx";
-import ProgressBar from "../Components/ProgressBar.tsx";
 const Post = lazy(() => import("../pages/Post.tsx"));
 const Consultation = lazy(() => import("../pages/Consultation.tsx"));
 const Auth = lazy(() => import("../pages/Auth.tsx"));

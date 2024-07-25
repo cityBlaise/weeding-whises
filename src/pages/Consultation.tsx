@@ -3,7 +3,6 @@ import { useSearchParams } from "react-router-dom";
 import Pagination from "../Components/Pagination";
 // import { useAppSettings } from "../Context/AppSettings/AppSettings.store";
 import { AnimatePresence, motion } from "framer-motion";
-import { nanoid } from "nanoid";
 import Card from "../Components/Card";
 import SliderSkeleton from "../Components/SliderSkeleton";
 import { ScreenSize } from "../Context/AppSettings/AppSettings";
