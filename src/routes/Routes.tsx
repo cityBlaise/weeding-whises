@@ -14,7 +14,7 @@ export const Loader = () => {
     // Start the timer
     timer.current = setTimeout(() => {
       setShowLoader(true);
-    }, 100);
+    }, 2000);
 
     // Clear the timer on component unmount
     return () => {
@@ -26,8 +26,8 @@ export const Loader = () => {
   if (showLoader)
     return (
       <div className="grid place-items-center w-full h-full fixed top-0 left-0 bg-white/80">
-        <div className="w-fit p-3 min-w-[300px] border shadow-sm  text-xl font-robotolight font-bold capitalize grid place-items-center rounded-xl">
-          <ProgressBar value={20} />
+        <div className="w-fit p-3 min-w-[300px] border text-center shadow-sm  text-xl font-josephsophia font-bold capitalize grid place-items-center rounded-xl">
+         veuillez patienter svp ..
         </div>
       </div>
     );
