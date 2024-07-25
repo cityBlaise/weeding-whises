@@ -116,7 +116,6 @@ const Consultation = () => {
                 }}
               >
                 {data.data.map((x, i) => {
-                  const id = nanoid();
                   return (
                     <motion.div
                       key={x.postId}
@@ -138,14 +137,26 @@ const Consultation = () => {
                           <div
                             className="h-full w-full items-center justify-center flex  p-4"
                             onClick={(e) => {
-                              if (e.currentTarget == e.target) close(id);
+                              if (e.currentTarget == e.target) close(x.postId);
                             }}
                           >
-                            <div className="card h-full max-h-[400px] w-full max-w-2xl overflow-hidden bg-slate-50">
+                            <div className="card relative isolate h-full max-h-[400px] w-full max-w-2xl  bg-slate-50">
                               <Card {...x} />
+                              <div
+                              style={{
+                                width: `calc(100% + 1px)`,
+                                height: `calc(100% + 1px)`, 
+                              }}
+                              className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-1 bg-white"/>
+                              <div
+                              style={{
+                                width: `calc(100% + 1px)`,
+                                height: `calc(100% + 1px)`, 
+                              }}
+                              className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-1 bg-white"/>
                             </div>
                           </div>,
-                          id,
+                          x.postId,
                           true
                         );
                       }}
