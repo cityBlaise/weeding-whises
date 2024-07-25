@@ -74,8 +74,8 @@ input {
   background-color: white;
 }
 .s3 {
-  background: url("/300.webp") repeat;
-  background-size: cover;
+  background: url("/s2.webp") repeat;
+  background-size: contain;
   background-color: white;
 }
 
@@ -161,15 +161,10 @@ input {
 }
 
 /* For screen width between 1301px and 1800px */
-@media (min-width: 1301px) and (max-width: 1800px) {
+@media (min-width: 1301px)  {
   .card {
-    font-size: min(2.3rem, 3vw);
+    font-size: min(1.8rem, 2vw);
   }
 }
 
-/* For screen width > 1800px */
-@media (min-width: 1801px) {
-  .card {
-    font-size: min(2.3rem, 3vw);
-  }
-}
+ 
