@@ -1,6 +1,6 @@
 import { IoIosSend } from "react-icons/io";
 import { useAppSettings } from "../Context/AppSettings/AppSettings.store";
-import img4 from "/img4.png";
+import img4 from "/11.png";
 import rings from "/img7.png";
 import rings2 from "/img5.png";
 import floral from "/floral=pp.webp";
@@ -172,7 +172,7 @@ const Post = () => {
                 src={img4}
                 draggable={false}
                 alt=""
-                className="mask-img3 object-contain aspect-square border h-40 mt-4"
+                className="mask-img3 object-scale-down w-[200px] aspect-square mt-2"
               />
               <img
                 src={floral}
