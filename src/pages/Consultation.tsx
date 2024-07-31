@@ -14,6 +14,7 @@ import { CONSTS } from "../utils/consts/const";
 import PaginatedDataFetched from "../utils/types/PaginatedDataFetched";
 import Post from "../utils/types/Post";
 import loadingError from "/internet-error.svg";
+import emptyData from '/empty-data.svg'
 // import emptyData from "/empty-data.svg";
 
 const Consultation = () => {
@@ -98,7 +99,21 @@ const Consultation = () => {
             </motion.div>
           )}
 
-          {!showLoader && !error && data && (
+          {!showLoader && !error && data&& data.data.length==0 &&(
+            <motion.div
+            layout
+            className="min-h-[70dvh] border rounded text-4xl bg-slate-50 gap-3 grid place-content-center shadow font-josephsophia"
+            key={";"}
+            initial={{ opacity: 0.8 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <img src={emptyData} alt="no data img" className="max-w-[200px] border mx-auto aspect-square object-contain"/>
+            <div className="text-center text-green-hermine">aucun voeux n'a été posté pour le moment</div>
+          </motion.div>
+          )}
+          {!showLoader && !error && data&& data.data.length>0 && (
             <motion.div
               layout
               key={";"}

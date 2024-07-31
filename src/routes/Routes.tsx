@@ -1,10 +1,10 @@
 import { ReactNode, Suspense, lazy, useEffect, useRef, useState } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import { Test } from "../pages/Test.tsx";
+// import { Test } from "../pages/Test.tsx";
 const Post = lazy(() => import("../pages/Post.tsx"));
 const Consultation = lazy(() => import("../pages/Consultation.tsx"));
-const Auth = lazy(() => import("../pages/Auth.tsx"));
+// const Auth = lazy(() => import("../pages/Auth.tsx"));
 
 export const Loader = () => {
   const timer = useRef<null | ReturnType<typeof setTimeout>>(null);
@@ -44,16 +44,16 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: wrappWithSuspense(<Post />) },
       {
-        path: "whises",
+        path: "whises/*",
         element: wrappWithSuspense(<Consultation />),
       },
+      // {
+      //   path: "auth",
+      //   element: wrappWithSuspense(<Auth />),
+      // },
       {
-        path: "auth",
-        element: wrappWithSuspense(<Auth />),
-      },
-      {
-        path: "test",
-        element: wrappWithSuspense(<Test />),
+        path: "*",
+        element: wrappWithSuspense(<Post />),
       },
     ],
   },
