@@ -2,7 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import img1 from "/img1.png";
-import img2 from "/img2.png";
+import img2 from "/11.png";
 import { useAppSettings } from "../Context/AppSettings/AppSettings.store";
 import { ScreenSize } from "../Context/AppSettings/AppSettings";
 const XLargeScreen = () => {
@@ -17,7 +17,7 @@ const XLargeScreen = () => {
             <img
               src={img2}
               alt=""
-              className="max-w-full aspect-square   object-contain "
+              className="max-w-full aspect-square mask-img3   object-cover "
             />
           </div>
         )}
